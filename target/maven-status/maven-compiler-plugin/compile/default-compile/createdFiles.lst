@@ -1,0 +1,11 @@
+by\it\academy\Mk_JD2_88_22\endpoints\PoolMain.class
+by\it\academy\Mk_JD2_88_22\service\api\ChoiceWithCount.class
+by\it\academy\Mk_JD2_88_22\Main.class
+by\it\academy\Mk_JD2_88_22\service\PoolService.class
+by\it\academy\Mk_JD2_88_22\service\api\dto\SavedPool.class
+by\it\academy\Mk_JD2_88_22\service\api\IPoolService.class
+by\it\academy\Mk_JD2_88_22\endpoints\PoolServlet.class
+by\it\academy\Mk_JD2_88_22\endpoints\GetArtistListServlet.class
+by\it\academy\Mk_JD2_88_22\endpoints\GetGenresListServlet.class
+by\it\academy\Mk_JD2_88_22\endpoints\PoolResultServlet.class
+by\it\academy\Mk_JD2_88_22\service\api\dto\Pool.class
