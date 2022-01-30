@@ -9,7 +9,6 @@ import by.it.academy.Mk_JD2_88_22.service.api.dto.SavedPool;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 public class PoolService implements IPoolService {
@@ -53,21 +52,6 @@ public class PoolService implements IPoolService {
         SavedPool saved = new SavedPool(LocalDateTime.now(), pool);
         this.pools.add(saved);
         ChoiceWithCount.getPoolsModified().add(saved);
-    }
-
-    @Override
-    public List<ChoiceWithCount> getTopArtist() {
-        return null;
-    }
-
-    @Override
-    public List<ChoiceWithCount> getTopGenres() {
-        return null;
-    }
-
-    @Override
-    public List<SavedPool> getSortedPool(Comparator<SavedPool> comparator) {
-        return null;
     }
 
 }

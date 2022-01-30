@@ -27,9 +27,10 @@ public class GetGenresListServlet extends HttpServlet {
         PrintWriter writer = resp.getWriter();
 
 
-        writer.write("<p>Выберите 3 любимых жанра,написав соответсвующие голоса в параметры \"pg=\"</p><br>");
+        writer.write("<p>Выберите 3 любимых жанра,написав соответсвующие голоса в хэдер \"GENRE_POOL\"</p><br>");
         for (int i = 0; i < genres.size(); i++) {
             writer.write("<p>" + (i + 1) + "." + genres.get(i) + "</p>");
         }
+        writer.write("<p>Напишите допольнительную информацию о себе в хэдер \"GENRE_POOL\"</p><br>");
     }
 }

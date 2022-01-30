@@ -4,6 +4,7 @@ package by.it.academy.Mk_JD2_88_22.service.api.dto;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
+import java.util.Comparator;
 
 public class SavedPool {
     private final LocalDateTime time;
@@ -22,9 +23,10 @@ public class SavedPool {
         return pool;
     }
 
+
     @Override
     public String toString() {
-        DateTimeFormatter dtf = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM,FormatStyle.MEDIUM);
+        DateTimeFormatter dtf = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM, FormatStyle.MEDIUM);
         return "Голос | Время: " + time.format(dtf) + ", данные о голосе: " + pool;
     }
 }

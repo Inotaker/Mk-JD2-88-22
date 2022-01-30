@@ -27,9 +27,10 @@ public class GetArtistListServlet extends HttpServlet {
         PrintWriter writer = resp.getWriter();
 
 
-        writer.write("<p>Выберите любимого исполнителя,написав соответсвующий голос в параметр \"pp=\"</p>");
+        writer.write("<p>Выберите любимого исполнителя,написав соответсвующий голос в хэдер\"PERFORMER_POOL\"</p>");
         for (int i = 0; i < artists.size(); i++) {
             writer.write("<p>" + (i + 1) + "." + artists.get(i) + "</p>");
         }
+        writer.write("<p>Напишите допольнительную информацию о себе в хэдер \"GENRE_POOL\"</p><br>");
     }
 }
