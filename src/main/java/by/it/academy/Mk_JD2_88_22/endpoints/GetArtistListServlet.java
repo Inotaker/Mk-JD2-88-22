@@ -18,7 +18,7 @@ public class GetArtistListServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 
-        IPoolService service = new PoolService();
+        IPoolService service = PoolService.getInstance();
         List<String> artists = service.getArtists();
 
 

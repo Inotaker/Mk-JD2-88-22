@@ -6,7 +6,7 @@ import by.it.academy.Mk_JD2_88_22.service.api.dto.SavedPool;
 import java.util.*;
 
 public class ChoiceWithCount {
-    private static IPoolService poolService = new PoolService();
+    private static IPoolService poolService = PoolService.getInstance();
     private static List<SavedPool> poolsModified = new ArrayList<>();
 
 
@@ -69,6 +69,4 @@ public class ChoiceWithCount {
         return poolsModified;
     }
 
-    public void getTopPerformers() {
-    }
 }

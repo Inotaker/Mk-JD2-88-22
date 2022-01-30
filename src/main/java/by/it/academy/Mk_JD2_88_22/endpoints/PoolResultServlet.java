@@ -1,5 +1,6 @@
 package by.it.academy.Mk_JD2_88_22.endpoints;
 
+import by.it.academy.Mk_JD2_88_22.service.PoolService;
 import by.it.academy.Mk_JD2_88_22.service.api.ChoiceWithCount;
 import by.it.academy.Mk_JD2_88_22.service.api.dto.SavedPool;
 
@@ -16,11 +17,14 @@ import java.util.Comparator;
 @WebServlet(name = "PoolResultServlet", urlPatterns = "/pool_result")
 public class PoolResultServlet extends HttpServlet {
 
+    PoolService poolService = PoolService.getInstance();
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
         resp.setContentType("text/html; charset=UTF-8");
         PrintWriter writer = resp.getWriter();
+        writer.write("<p>Количество голосов и информаци о них: " + poolService.getPools().size() + "</p></br>");
         for (SavedPool pool : ChoiceWithCount.getPoolsModified()) {
             writer.write("</p>" + pool.toString() + "</p>");
             writer.write("<p></p>");

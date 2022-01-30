@@ -26,7 +26,7 @@ public class PoolServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 
-        IPoolService service = new PoolService();
+        IPoolService service = PoolService.getInstance();
         List<String> artists = service.getArtists();
         List<String> genres = service.getGenres();
 
@@ -66,7 +66,7 @@ public class PoolServlet extends HttpServlet {
 
         Pool pool = new Pool(Integer.parseInt(poolsPerformer[0]), new int[]{Integer.parseInt(poolsGenres[0]), Integer.parseInt(poolsGenres[1]), Integer.parseInt(poolsGenres[2])}, aboutUser[0]);
         service.creatPool(pool);
-        writer.write("<p>" + service.getPools().toString() + "</p>");
+        writer.write("<p>" + service.getPools().get(service.getPools().size()-1) + "</p>");
 
     }
 }

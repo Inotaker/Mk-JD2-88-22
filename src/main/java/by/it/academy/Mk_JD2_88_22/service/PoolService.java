@@ -13,6 +13,8 @@ import java.util.List;
 
 public class PoolService implements IPoolService {
 
+    private static PoolService instance = new PoolService();
+
     private List<String> artists = new ArrayList<>();
     private List<String> genres = new ArrayList<>();
     private List<SavedPool> pools = new ArrayList<>();
@@ -54,4 +56,7 @@ public class PoolService implements IPoolService {
         ChoiceWithCount.getPoolsModified().add(saved);
     }
 
+    public static PoolService getInstance() {
+        return instance;
+    }
 }
