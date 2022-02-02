@@ -1,12 +1,14 @@
-by\it\academy\Mk_JD2_88_22\service\api\ChoiceWithCount.class
 by\it\academy\Mk_JD2_88_22\endpoints\mains\PoolMain.class
 by\it\academy\Mk_JD2_88_22\endpoints\mains\servlets\PoolResultServlet$1.class
 by\it\academy\Mk_JD2_88_22\endpoints\mains\servlets\PoolServlet.class
+by\it\academy\Mk_JD2_88_22\service\api\IPoolService.class
+by\it\academy\Mk_JD2_88_22\endpoints\mains\servlets\CookieServlet.class
+by\it\academy\Mk_JD2_88_22\endpoints\mains\servlets\GetGenresListServlet.class
+by\it\academy\Mk_JD2_88_22\service\api\ChoiceWithCount.class
 by\it\academy\Mk_JD2_88_22\Main.class
 by\it\academy\Mk_JD2_88_22\service\PoolService.class
 by\it\academy\Mk_JD2_88_22\endpoints\mains\servlets\PoolResultServlet.class
 by\it\academy\Mk_JD2_88_22\service\api\dto\SavedPool.class
-by\it\academy\Mk_JD2_88_22\service\api\IPoolService.class
 by\it\academy\Mk_JD2_88_22\endpoints\mains\servlets\GetArtistListServlet.class
-by\it\academy\Mk_JD2_88_22\endpoints\mains\servlets\GetGenresListServlet.class
+by\it\academy\Mk_JD2_88_22\endpoints\mains\servlets\SessionServlet.class
 by\it\academy\Mk_JD2_88_22\service\api\dto\Pool.class
