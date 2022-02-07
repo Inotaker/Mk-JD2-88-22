@@ -1,4 +1,4 @@
-package by.it.academy.Mk_JD2_88_22.endpoints.servlets.pools;
+package by.it.academy.Mk_JD2_88_22.controllers.web.servlets.pools;
 
 import by.it.academy.Mk_JD2_88_22.service.pool.PoolService;
 import by.it.academy.Mk_JD2_88_22.service.api.pool.ChoiceWithCount;

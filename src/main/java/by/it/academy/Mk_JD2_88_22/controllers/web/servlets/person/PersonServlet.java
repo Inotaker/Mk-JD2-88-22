@@ -1,4 +1,4 @@
-package by.it.academy.Mk_JD2_88_22.endpoints.servlets.person;
+package by.it.academy.Mk_JD2_88_22.controllers.web.servlets.person;
 
 import by.it.academy.Mk_JD2_88_22.service.api.dto.person.Person;
 import by.it.academy.Mk_JD2_88_22.service.api.person.IStorageService;

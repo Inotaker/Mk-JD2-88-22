@@ -3,7 +3,6 @@ by\it\academy\Mk_JD2_88_22\endpoints\mains\PoolMain.class
 by\it\academy\Mk_JD2_88_22\service\person\CookiesStorage.class
 by\it\academy\Mk_JD2_88_22\endpoints\servlets\pools\PoolServlet.class
 by\it\academy\Mk_JD2_88_22\service\person\StorageService.class
-by\it\academy\Mk_JD2_88_22\service\api\dto\pool\DeserializedPool.class
 by\it\academy\Mk_JD2_88_22\service\api\pool\ChoiceWithCount.class
 by\it\academy\Mk_JD2_88_22\endpoints\servlets\CountSessionServlet.class
 by\it\academy\Mk_JD2_88_22\service\person\SelectedFromHeaderStorage.class

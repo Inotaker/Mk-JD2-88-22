@@ -1,4 +1,4 @@
-package by.it.academy.Mk_JD2_88_22.listeners;
+package by.it.academy.Mk_JD2_88_22.controllers.web.listeners;
 
 import javax.servlet.http.HttpSessionEvent;
 import javax.servlet.http.HttpSessionListener;

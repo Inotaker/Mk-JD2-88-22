@@ -1,6 +1,6 @@
-package by.it.academy.Mk_JD2_88_22.endpoints.servlets;
+package by.it.academy.Mk_JD2_88_22.controllers.web.servlets;
 
-import by.it.academy.Mk_JD2_88_22.listeners.SessionListener;
+import by.it.academy.Mk_JD2_88_22.controllers.web.listeners.SessionListener;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

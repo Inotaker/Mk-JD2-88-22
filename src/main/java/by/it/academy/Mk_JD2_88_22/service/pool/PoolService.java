@@ -6,12 +6,15 @@ import by.it.academy.Mk_JD2_88_22.service.api.dto.pool.SavedPool;
 import by.it.academy.Mk_JD2_88_22.service.api.pool.ChoiceWithCount;
 import by.it.academy.Mk_JD2_88_22.service.api.pool.IPoolService;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class PoolService implements IPoolService {
+public class PoolService implements IPoolService, Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     private static PoolService instance = new PoolService();
 
@@ -25,13 +28,17 @@ public class PoolService implements IPoolService {
         this.artists.add("Квин");
         this.artists.add("Баста");
         this.artists.add("Европа+");
+        this.artists.add("Король и Шут");
+        this.artists.add("All Good Things");
+        this.artists.add("Hollywood Undead");
 
 
         this.genres.add("Поп");
         this.genres.add("Рок");
         this.genres.add("Джаз");
         this.genres.add("Классика");
-        this.genres.add("....");
+        this.genres.add("Рэп");
+        this.genres.add("Электроника");
     }
 
     @Override

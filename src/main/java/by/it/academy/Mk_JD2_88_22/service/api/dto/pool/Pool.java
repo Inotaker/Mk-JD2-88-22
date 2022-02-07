@@ -34,6 +34,6 @@ public class Pool implements Serializable {
     @Override
     public String toString() {
         IPoolService poolService = new PoolService();
-        return "Исполнитель - " + poolService.getArtists().get(artist - 1).toString() + "\n жанры под номером - " + Arrays.toString(genres) + "\n информация о проголосовавшем - " + about;
+        return "Исполнитель - " + poolService.getArtists().get(artist - 1).toString() + "| жанры под номером - " + Arrays.toString(genres) + "| информация о проголосовавшем - " + about;
     }
 }

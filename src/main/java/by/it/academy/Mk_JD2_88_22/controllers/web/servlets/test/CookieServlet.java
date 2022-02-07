@@ -1,4 +1,4 @@
-package by.it.academy.Mk_JD2_88_22.endpoints.servlets.test;
+package by.it.academy.Mk_JD2_88_22.controllers.web.servlets.test;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
