@@ -2,5 +2,11 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
           http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
-    <display-name>M-JD2-XXX-XX</display-name>
+    <display-name>Mk-JD2-88-22</display-name>
+    <listener>
+        <listener-class>by.it.academy.Mk_JD2_88_22.listeners.SessionListener</listener-class>
+    </listener>
+    <listener>
+        <listener-class>by.it.academy.Mk_JD2_88_22.listeners.ContextListener</listener-class>
+    </listener>
 </web-app>

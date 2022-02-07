@@ -1,14 +1,14 @@
 package by.it.academy.Mk_JD2_88_22.endpoints.mains;
 
-import by.it.academy.Mk_JD2_88_22.service.PoolService;
-import by.it.academy.Mk_JD2_88_22.service.api.IPoolService;
-import by.it.academy.Mk_JD2_88_22.service.api.dto.Pool;
+import by.it.academy.Mk_JD2_88_22.service.api.dto.pool.Pool;
+import by.it.academy.Mk_JD2_88_22.service.api.pool.IPoolService;
+import by.it.academy.Mk_JD2_88_22.service.pool.PoolService;
 
 import java.util.List;
 
 public class PoolMain {
-    public static void main(String[] args) {
-        IPoolService service = new PoolService();
+    public static void main(String[] args) throws InterruptedException {
+        IPoolService service = PoolService.getInstance();
         List<String> artists = service.getArtists();
         List<String> genres = service.getGenres();
 
@@ -28,7 +28,7 @@ public class PoolMain {
         System.out.println(service.getGenres());
         System.out.println(service.getPools());
 
-        Pool pool2 = new Pool(4,new int[]{1,2,3},"hELLO");
+        Pool pool2 = new Pool(4, new int[]{1, 2, 3}, "hELLO");
         service.creatPool(pool2);
 
         System.out.println(service.getArtists());
