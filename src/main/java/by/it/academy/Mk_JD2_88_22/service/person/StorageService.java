@@ -1,5 +1,5 @@
 package by.it.academy.Mk_JD2_88_22.service.person;
-import by.it.academy.Mk_JD2_88_22.service.api.dto.person.Person;
+import by.it.academy.Mk_JD2_88_22.service.dto.person.Person;
 import by.it.academy.Mk_JD2_88_22.service.api.person.IStorageService;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

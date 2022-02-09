@@ -1,13 +1,13 @@
 package by.it.academy.Mk_JD2_88_22.service.api.pool;
 
-import by.it.academy.Mk_JD2_88_22.service.pool.PoolService;
-import by.it.academy.Mk_JD2_88_22.service.api.dto.pool.SavedPool;
+import by.it.academy.Mk_JD2_88_22.service.pool.PollService;
+import by.it.academy.Mk_JD2_88_22.service.dto.polls.SavedPoll;
 
 import java.util.*;
 
 public class ChoiceWithCount {
-    private static IPoolService poolService = PoolService.getInstance();
-    private static List<SavedPool> poolsModified = new ArrayList<>();
+    private static IPollService poolService = PollService.getInstance();
+    private static List<SavedPoll> poolsModified = new ArrayList<>();
 
 
     private static Map<String, Integer> performerTop = new HashMap<>();
@@ -17,8 +17,8 @@ public class ChoiceWithCount {
         performerTop.clear();
         int numberOfPerformer = 0;
         List<String> performerList = poolService.getArtists();
-        for (SavedPool savedPool : poolsModified) {
-            numberOfPerformer = savedPool.getPool().getArtist();
+        for (SavedPoll savedPoll : poolsModified) {
+            numberOfPerformer = savedPoll.getPool().getArtist();
             String performerByHisNumber = performerList.get(numberOfPerformer - 1);
             if (performerTop.containsKey(performerByHisNumber)) {
                 for (Map.Entry<String, Integer> entry : performerTop.entrySet()) {
@@ -40,9 +40,9 @@ public class ChoiceWithCount {
         genresTop.clear();
         int numberOfGenres = 0;
         List<String> genresList = poolService.getGenres();
-        for (SavedPool savedPool : poolsModified) {
-            for (int i = 0; i < savedPool.getPool().getGenres().length; i++) {
-                numberOfGenres = savedPool.getPool().getGenres()[i];//достаю номер жанра, за который проголосовали
+        for (SavedPoll savedPoll : poolsModified) {
+            for (int i = 0; i < savedPoll.getPool().getGenres().length; i++) {
+                numberOfGenres = savedPoll.getPool().getGenres()[i];//достаю номер жанра, за который проголосовали
                 String genreByHisNumber = genresList.get(numberOfGenres - 1);
                 if (genresTop.containsKey(genreByHisNumber)) {
                     for (Map.Entry<String, Integer> entry : genresTop.entrySet()) {
@@ -61,11 +61,11 @@ public class ChoiceWithCount {
         return sortedGenresTop;
     }
 
-    public List<SavedPool> getSortedPoolByTime() {
+    public List<SavedPoll> getSortedPoolByTime() {
         return poolsModified;
     }
 
-    public static List<SavedPool> getPoolsModified() {
+    public static List<SavedPoll> getPoolsModified() {
         return poolsModified;
     }
 
