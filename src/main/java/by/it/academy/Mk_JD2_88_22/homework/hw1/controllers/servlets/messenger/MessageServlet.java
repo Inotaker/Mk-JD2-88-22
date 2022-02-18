@@ -1,8 +1,8 @@
 package by.it.academy.Mk_JD2_88_22.homework.hw1.controllers.servlets.messenger;
 
 import by.it.academy.Mk_JD2_88_22.homework.hw1.dto.User;
-import by.it.academy.Mk_JD2_88_22.homework.hw1.service.IMessageService;
-import by.it.academy.Mk_JD2_88_22.homework.hw1.service.IUserService;
+import by.it.academy.Mk_JD2_88_22.homework.hw1.service.api.IMessageService;
+import by.it.academy.Mk_JD2_88_22.homework.hw1.service.api.IUserService;
 import by.it.academy.Mk_JD2_88_22.homework.hw1.service.MessageService;
 import by.it.academy.Mk_JD2_88_22.homework.hw1.service.UserService;
 

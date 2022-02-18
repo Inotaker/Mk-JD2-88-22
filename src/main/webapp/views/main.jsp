@@ -1,8 +1,8 @@
 <%@ page import="by.it.academy.Mk_JD2_88_22.homework.hw1.service.UserService" %>
 <%@ page import="by.it.academy.Mk_JD2_88_22.homework.hw1.dto.User" %>
-<%@ page import="by.it.academy.Mk_JD2_88_22.homework.hw1.service.IMessageService" %>
+<%@ page import="by.it.academy.Mk_JD2_88_22.homework.hw1.service.api.IMessageService" %>
 <%@ page import="by.it.academy.Mk_JD2_88_22.homework.hw1.service.MessageService" %>
-<%@ page import="by.it.academy.Mk_JD2_88_22.homework.hw1.service.IUserService" %><%--
+<%@ page import="by.it.academy.Mk_JD2_88_22.homework.hw1.service.api.IUserService" %><%--
   Created by IntelliJ IDEA.
   User: Inotak
   Date: 2/17/2022
