@@ -47,8 +47,10 @@
     </tr>
 </table>
 <br>
-<form action="${pageContext.request.contextPath}/views/logout" method="get">
-    <input type="submit" style="background-color: burlywood" value="Logout">
-</form>
+<c:if test="${user!=null}">
+    <form action="${pageContext.request.contextPath}/views/logout" method="get">
+        <input type="submit" style="background-color: burlywood" value="Logout">
+    </form>
+</c:if>
 </body>
 </html>
