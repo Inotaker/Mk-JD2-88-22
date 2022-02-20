@@ -4,8 +4,6 @@ import by.it.academy.Mk_JD2_88_22.homework.hw1.dto.Message;
 import by.it.academy.Mk_JD2_88_22.homework.hw1.dto.User;
 import by.it.academy.Mk_JD2_88_22.homework.hw1.service.MessageService;
 import by.it.academy.Mk_JD2_88_22.homework.hw1.service.UserService;
-import by.it.academy.Mk_JD2_88_22.homework.hw1.service.api.IMessageService;
-import by.it.academy.Mk_JD2_88_22.homework.hw1.service.api.IUserService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,17 +15,16 @@ import java.util.List;
 
 @WebServlet(name = "ChatsServlet", urlPatterns = "/views/chats")
 public class ChatsServlet extends HttpServlet {
-    private UserService service = UserService.getInstance();
     private MessageService messageService = MessageService.getInstance();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         User user = (User) req.getSession().getAttribute("user");
-            List<Message> incomingMessages = messageService.getIncomingMessages(user.getUsername());
-            List<Message> outgoingMessages = messageService.getOutgoingMessages(user.getUsername());
-            req.setAttribute("outgoingMessages", outgoingMessages);
-            req.setAttribute("incomingMessages", incomingMessages);
-            req.getRequestDispatcher("/views/chats.jsp").forward(req, resp);
+        List<Message> incomingMessages = messageService.getIncomingMessages(user.getUsername());
+        List<Message> outgoingMessages = messageService.getOutgoingMessages(user.getUsername());
+        req.setAttribute("outgoingMessages", outgoingMessages);
+        req.setAttribute("incomingMessages", incomingMessages);
+        req.getRequestDispatcher("/views/chats.jsp").forward(req, resp);
     }
 
 }

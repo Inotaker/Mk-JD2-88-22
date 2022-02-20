@@ -6,12 +6,15 @@
 <%
     User user = (User) session.getAttribute("user");
 %>
+<!doctype html>
 <html>
 <head>
     <title>Main page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <body>
-<h1 style="color: brown;">Welcome, <c:choose>
+<h1 class="">Welcome, <c:choose>
     <c:when test="${user!=null}">
         <%= user.getUsername()%>
     </c:when>
@@ -23,10 +26,10 @@
 <table>
     <c:if test="${user==null}">
         <tr>
-            <td><a href="signIn.jsp"><input type="button" value="Login"></a></td>
+            <td><a href="signIn.jsp"><input class="btn-primary" type="button" value="Login"></a></td>
         </tr>
         <tr>
-            <td><a href="signUp.jsp"><input type="button" value="Register"></a></td>
+            <td><a href="signUp.jsp"><input class="btn-primary" type="button" value="Register"></a></td>
         </tr>
         <tr>
         </tr>
@@ -34,14 +37,14 @@
     <tr>
         <td>
             <form action="${pageContext.request.contextPath}/views/message" method="get">
-                <input type="submit" value="Print message">
+                <input class="btn-secondary" type="submit" value="Print message">
             </form>
         </td>
     </tr>
     <tr>
         <td>
             <form action="${pageContext.request.contextPath}/views/chats" method="get">
-                <input type="submit" value="Chats">
+                <input class="btn-secondary" type="submit" value="Chats">
             </form>
         </td>
     </tr>
@@ -49,7 +52,7 @@
 <br>
 <c:if test="${user!=null}">
     <form action="${pageContext.request.contextPath}/views/logout" method="get">
-        <input type="submit" style="background-color: burlywood" value="Logout">
+        <input class="btn-dark" type="submit"  value="Logout">
     </form>
 </c:if>
 </body>
