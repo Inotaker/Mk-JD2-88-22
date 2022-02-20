@@ -29,20 +29,14 @@ public class UserService implements IUserService {
 
     @Override
     public boolean addToStorage(User user) {
-        this.userList.add(user);
-//        String userName = user.getUsername();//Имя добавляемого юзера
-//        if (getWithoutPass(userName) == null) {//если полученый юзер по имени равен нуллу продолжить
-//            String existUserName = getWithoutPass(userName).getUsername();
-//            if (!(userName.equals(existUserName))) {
-//                this.userList.add(user);
-//                return true;
-//            } else {
-//                return false;
-//            }
-//        } else {
-//            return false;
-//        }
-        return true;
+        String consumerUsername = user.getUsername();
+        if (getWithoutPass(consumerUsername) == null) {
+            this.userList.add(user);
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
     @Override
