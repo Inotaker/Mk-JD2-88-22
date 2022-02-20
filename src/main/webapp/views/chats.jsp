@@ -13,11 +13,12 @@
 <head>
     <style>table, th, td, tr {
         border: 2px solid;
-    }</style>
+    }
+    </style>
     <title>Chats</title>
 </head>
 <body>
-<p style="background-color: blue">Incoming messages:</p>
+<p style="background-color: royalblue"><b>Incoming messages:</b></p>
 <table>
     <c:choose>
         <c:when test="${user!=null}">
@@ -39,7 +40,7 @@
     </c:choose>
 </table>
 <br>
-<p style="background-color: red">Outgoing messages:</p>
+<p style="background-color: indianred"><b>Outgoing messages:</b></p>
 <table>
     <c:choose>
         <c:when test="${user!=null}">

@@ -20,14 +20,16 @@ Message page
     Recipient : <input type="text" name="recipient">
     <input type="submit" value="Submit">
 </form>
-<c:choose>
-    <c:when test="messageDeploy">
-        <p style="color: green">Message deployed!</p>
-    </c:when>
-    <c:otherwise>
-        <p style="color: red">Recipient not found!</p>
-    </c:otherwise>
-</c:choose>
+<c:if test="${messageDeploy!=null}">
+    <c:choose>
+        <c:when test="${messageDeploy && messageDeploy}">
+            <p style="color: green">Message deployed!</p>
+        </c:when>
+        <c:otherwise>
+            <p style="color: red">Recipient not found!</p>
+        </c:otherwise>
+    </c:choose>
+</c:if>
 <jsp:include page="returnToMain.html"></jsp:include>
 </body>
 </html>

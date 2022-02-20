@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
     <title>SignIn</title>
@@ -24,6 +26,21 @@ Login page
             <td><input type="submit" name="Submit"></td>
         </tr>
     </table>
+    <c:choose>
+        <c:when test="${userLogin!=null}">
+            <c:choose>
+                <c:when test="${userLogin}">
+                    <p style="color: green;"><b>Login successful!</b></p>
+                </c:when>
+                <c:otherwise>
+                    <p style="color: red"><b>Login fail!</b></p>
+                </c:otherwise>
+            </c:choose>
+        </c:when>
+    </c:choose>
+    <c:if test="${userWrongPassword}">
+        <p style="color: orange"><b>Wrong password!</b></p>
+    </c:if>
 </form>
 <jsp:include page="returnToMain.html"></jsp:include>
 </body>

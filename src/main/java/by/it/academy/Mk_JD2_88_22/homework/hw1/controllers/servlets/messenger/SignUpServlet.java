@@ -2,6 +2,7 @@ package by.it.academy.Mk_JD2_88_22.homework.hw1.controllers.servlets.messenger;
 
 import by.it.academy.Mk_JD2_88_22.homework.hw1.dto.User;
 import by.it.academy.Mk_JD2_88_22.homework.hw1.service.UserService;
+import by.it.academy.Mk_JD2_88_22.homework.hw1.service.api.IUserService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,6 +17,11 @@ import java.time.LocalDate;
 public class SignUpServlet extends HttpServlet {
     private UserService userService = UserService.getInstance();
 
+    private boolean usernameEmpty = false;
+    private boolean passwordEmpty = false;
+    private boolean fioEmpty = false;
+    private boolean birthdayEmpty = false;
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.getRequestDispatcher("/views/signUp.jsp").forward(req, resp);
@@ -28,26 +34,40 @@ public class SignUpServlet extends HttpServlet {
         resp.setCharacterEncoding("UTF-8");
         resp.setContentType("text/html; charset=UTF-8");
 
+        if (req.getParameter("username").equals("")) {
+            req.setAttribute("usernameEmpty", true);
+            usernameEmpty = true;
+        }
         String username = req.getParameter("username");
+
+        if (req.getParameter("password").equals("")) {
+            req.setAttribute("passwordEmpty", true);
+            passwordEmpty = true;
+        }
         String password = req.getParameter("password");
+
+        if (req.getParameter("fio").equals("")) {
+            req.setAttribute("fioEmpty", true);
+            fioEmpty = true;
+        }
         String fio = req.getParameter("fio");
+        if (req.getParameter("birthday") == null || req.getParameter("birthday").equals("")) {
+            req.setAttribute("birthdayEmpty", true);
+            birthdayEmpty = true;
+        }
+        if (usernameEmpty || passwordEmpty || fioEmpty || birthdayEmpty) {
+            req.getRequestDispatcher("/views/signUp.jsp").forward(req, resp);
+        }
         LocalDate birthday = LocalDate.parse(req.getParameter("birthday"));
 
-        if (username != null && password != null && fio != null && birthday != null) {
-            User user = new User(username, password, fio, birthday);
-            userService.addToStorage(user);
-            writer.write("<p>Hello" + " " + username + " " + password + "<p>");
-            writer.write(userService.getFromStorage(username, password).toString());
 
-            if (user.equals(userService.getFromStorage(username, password))) {
-                req.removeAttribute("userExists");
-                req.setAttribute("userExists", true);
-            }
-            req.setAttribute("user", user);
+        User user = new User(username, password, fio, birthday);
+        if(userService.addToStorage(user)){
+            req.setAttribute("userCreated", true);
             req.getRequestDispatcher("/views/signUp.jsp").forward(req, resp);
-        } else {
-            req.removeAttribute("userExists");
-            req.setAttribute("userExists", false);
+        }
+        else {
+            req.setAttribute("userExists", true);
             req.getRequestDispatcher("/views/signUp.jsp").forward(req, resp);
         }
     }

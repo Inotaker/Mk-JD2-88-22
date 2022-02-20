@@ -10,26 +10,39 @@ import java.util.List;
 public class UserService implements IUserService {
     private static final UserService instance = new UserService();
     private List<User> userList = new ArrayList<>();
-    private static int userCount;
 
-    public int getUserCount() {
-        return userCount = this.userList.size();
+    {
+        addToStorage(new User("Inotak", "1", "fio", LocalDate.MIN));
+        addToStorage(new User("inotak_firman", "1", "fio", LocalDate.MIN));
+        addToStorage(new User("Alex", "1", "fio", LocalDate.MIN));
     }
 
+    @Override
+    public int getUserCount() {
+        return this.userList.size();
+    }
+
+    @Override
     public List<User> getUserList() {
         return userList;
     }
 
-    {
-        addToStorage(new User("Inotak", "1", "fio", LocalDate.MIN));
-        addToStorage(new User("inotak_firman", "1", "fio", LocalDate.MAX));
-        addToStorage(new User("Alex", "1", "fio", LocalDate.EPOCH));
-    }
-
-
     @Override
-    public void addToStorage(User user) {
+    public boolean addToStorage(User user) {
         this.userList.add(user);
+//        String userName = user.getUsername();//Имя добавляемого юзера
+//        if (getWithoutPass(userName) == null) {//если полученый юзер по имени равен нуллу продолжить
+//            String existUserName = getWithoutPass(userName).getUsername();
+//            if (!(userName.equals(existUserName))) {
+//                this.userList.add(user);
+//                return true;
+//            } else {
+//                return false;
+//            }
+//        } else {
+//            return false;
+//        }
+        return true;
     }
 
     @Override

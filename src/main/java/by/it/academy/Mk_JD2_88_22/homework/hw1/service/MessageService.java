@@ -11,9 +11,10 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class MessageService implements IMessageService {
-    private final static IMessageService instance = new MessageService();
+    private final static MessageService instance = new MessageService();
+    private final UserService service = UserService.getInstance();
+
     private Map<String, List<Message>> messageStorageByLogin = new HashMap<>();
-    private final IUserService service = UserService.getInstance();
     private static int messagesCount = 0;
 
     public Map<String, List<Message>> getMessageStorageByLogin() {
@@ -54,7 +55,7 @@ public class MessageService implements IMessageService {
         return messagesCount;
     }
 
-    public static IMessageService getInstance() {
+    public static MessageService getInstance() {
         return instance;
     }
 }
