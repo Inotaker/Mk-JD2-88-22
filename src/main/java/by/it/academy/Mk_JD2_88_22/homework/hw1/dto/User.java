@@ -1,19 +1,15 @@
 package by.it.academy.Mk_JD2_88_22.homework.hw1.dto;
 
+import java.io.Serializable;
+import java.sql.SQLException;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
-public class User {
+public class User implements DAO, Serializable {
+    private static final long serialVersionUID = 1l;
     private String username;
     private String password;
     private String fio;
     private LocalDate birthday;
-
-    private List<Message> incomingMessages = new ArrayList<>();
-    private List<Message> outgoingMessages = new ArrayList<>();
-
-    public boolean valid;
 
     public String getUsername() {
         return username;
@@ -31,15 +27,6 @@ public class User {
         return birthday;
     }
 
-    public List<Message> getIncomingMessages() {
-        return incomingMessages;
-    }
-
-    public List<Message> getOutgoingMessages() {
-        return outgoingMessages;
-    }
-
-
     public User(String username, String password, String fio, LocalDate birthday) {
         this.username = username;
         this.password = password;
@@ -49,14 +36,26 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
-                "username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", fio='" + fio + '\'' +
-                ", birthday=" + birthday +
-                ", incomingMessages=" + incomingMessages +
-                ", outgoingMessages=" + outgoingMessages +
-                ", valid=" + valid +
-                '}';
+        return username + " pass: " + password + " fio: " + fio;
+    }
+
+    @Override
+    public Object save(Object o) throws SQLException {
+        return null;
+    }
+
+    @Override
+    public Object get(Serializable id) throws SQLException {
+        return null;
+    }
+
+    @Override
+    public void update(Object o) throws SQLException {
+
+    }
+
+    @Override
+    public int delete(Serializable id) throws SQLException {
+        return 0;
     }
 }

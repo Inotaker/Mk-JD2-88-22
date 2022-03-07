@@ -1,4 +1,4 @@
-package by.it.academy.Mk_JD2_88_22.classwork.service.person;
+package by.it.academy.Mk_JD2_88_22.classwork.service.service.person;
 import by.it.academy.Mk_JD2_88_22.classwork.service.api.person.IStorageService;
 import by.it.academy.Mk_JD2_88_22.classwork.dto.person.Person;
 

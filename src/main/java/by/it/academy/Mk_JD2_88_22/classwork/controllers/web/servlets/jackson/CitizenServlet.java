@@ -2,7 +2,7 @@ package by.it.academy.Mk_JD2_88_22.classwork.controllers.web.servlets.jackson;
 
 import by.it.academy.Mk_JD2_88_22.classwork.dto.jackson.Citizen;
 import by.it.academy.Mk_JD2_88_22.classwork.service.api.jackson.ICitizenService;
-import by.it.academy.Mk_JD2_88_22.classwork.service.jackson.CitizenService;
+import by.it.academy.Mk_JD2_88_22.classwork.service.service.jackson.CitizenService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;

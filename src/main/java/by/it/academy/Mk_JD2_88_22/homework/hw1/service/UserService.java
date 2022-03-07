@@ -1,21 +1,15 @@
 package by.it.academy.Mk_JD2_88_22.homework.hw1.service;
 
 import by.it.academy.Mk_JD2_88_22.homework.hw1.dto.User;
+import by.it.academy.Mk_JD2_88_22.homework.hw1.dto.UserDB;
 import by.it.academy.Mk_JD2_88_22.homework.hw1.service.api.IUserService;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 public class UserService implements IUserService {
     private static final UserService instance = new UserService();
     private List<User> userList = new ArrayList<>();
-
-    {
-        addToStorage(new User("Inotak", "1", "fio", LocalDate.MIN));
-        addToStorage(new User("inotak_firman", "1", "fio", LocalDate.MIN));
-        addToStorage(new User("Alex", "1", "fio", LocalDate.MIN));
-    }
 
     @Override
     public int getUserCount() {
@@ -24,6 +18,7 @@ public class UserService implements IUserService {
 
     @Override
     public List<User> getUserList() {
+        this.userList = UserDB.select();
         return userList;
     }
 
@@ -31,10 +26,9 @@ public class UserService implements IUserService {
     public boolean addToStorage(User user) {
         String consumerUsername = user.getUsername();
         if (getWithoutPass(consumerUsername) == null) {
-            this.userList.add(user);
+            UserDB.insert(user);
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }

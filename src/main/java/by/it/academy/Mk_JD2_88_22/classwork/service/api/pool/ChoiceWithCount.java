@@ -1,6 +1,6 @@
 package by.it.academy.Mk_JD2_88_22.classwork.service.api.pool;
 
-import by.it.academy.Mk_JD2_88_22.classwork.service.pool.PollService;
+import by.it.academy.Mk_JD2_88_22.classwork.service.service.pool.PollService;
 import by.it.academy.Mk_JD2_88_22.classwork.dto.polls.SavedPoll;
 
 import java.util.*;

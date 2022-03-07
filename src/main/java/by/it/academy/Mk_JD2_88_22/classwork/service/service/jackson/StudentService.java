@@ -1,4 +1,4 @@
-package by.it.academy.Mk_JD2_88_22.classwork.service.jackson;
+package by.it.academy.Mk_JD2_88_22.classwork.service.service.jackson;
 
 import by.it.academy.Mk_JD2_88_22.classwork.dto.jackson.Student;
 import by.it.academy.Mk_JD2_88_22.classwork.service.api.jackson.IStudentService;

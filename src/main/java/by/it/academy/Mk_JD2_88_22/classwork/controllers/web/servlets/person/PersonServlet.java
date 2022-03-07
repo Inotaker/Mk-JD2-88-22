@@ -2,7 +2,7 @@ package by.it.academy.Mk_JD2_88_22.classwork.controllers.web.servlets.person;
 
 import by.it.academy.Mk_JD2_88_22.classwork.dto.person.Person;
 import by.it.academy.Mk_JD2_88_22.classwork.service.api.person.IStorageService;
-import by.it.academy.Mk_JD2_88_22.classwork.service.person.SelectedFromHeaderStorage;
+import by.it.academy.Mk_JD2_88_22.classwork.service.service.person.SelectedFromHeaderStorage;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

@@ -1,6 +1,6 @@
 package by.it.academy.Mk_JD2_88_22.classwork.controllers.web.servlets.polls;
 
-import by.it.academy.Mk_JD2_88_22.classwork.service.pool.PollService;
+import by.it.academy.Mk_JD2_88_22.classwork.service.service.pool.PollService;
 import by.it.academy.Mk_JD2_88_22.classwork.service.api.pool.ChoiceWithCount;
 import by.it.academy.Mk_JD2_88_22.classwork.service.api.pool.IPollService;
 import by.it.academy.Mk_JD2_88_22.classwork.dto.polls.SavedPoll;

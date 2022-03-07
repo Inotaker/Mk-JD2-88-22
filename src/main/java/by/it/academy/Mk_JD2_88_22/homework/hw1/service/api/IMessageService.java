@@ -10,7 +10,6 @@ public interface IMessageService {
 
     void sendMessage(String message, String recipient, String sender);
 
-
     List<Message> getIncomingMessages(String login);
 
     List<Message> getOutgoingMessages(String login);

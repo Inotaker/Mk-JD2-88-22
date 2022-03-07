@@ -3,7 +3,6 @@ package by.it.academy.Mk_JD2_88_22.homework.hw1.controllers.servlets.messenger;
 import by.it.academy.Mk_JD2_88_22.homework.hw1.dto.Message;
 import by.it.academy.Mk_JD2_88_22.homework.hw1.dto.User;
 import by.it.academy.Mk_JD2_88_22.homework.hw1.service.MessageService;
-import by.it.academy.Mk_JD2_88_22.homework.hw1.service.UserService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -22,6 +21,7 @@ public class ChatsServlet extends HttpServlet {
         User user = (User) req.getSession().getAttribute("user");
         List<Message> incomingMessages = messageService.getIncomingMessages(user.getUsername());
         List<Message> outgoingMessages = messageService.getOutgoingMessages(user.getUsername());
+
         req.setAttribute("outgoingMessages", outgoingMessages);
         req.setAttribute("incomingMessages", incomingMessages);
         req.getRequestDispatcher("/views/chats.jsp").forward(req, resp);

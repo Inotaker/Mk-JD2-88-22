@@ -1,8 +1,8 @@
 package by.it.academy.Mk_JD2_88_22.homework.hw1.controllers.servlets.messenger;
 
 import by.it.academy.Mk_JD2_88_22.homework.hw1.dto.User;
+import by.it.academy.Mk_JD2_88_22.homework.hw1.service.AuthService;
 import by.it.academy.Mk_JD2_88_22.homework.hw1.service.UserService;
-import by.it.academy.Mk_JD2_88_22.homework.hw1.service.api.IUserService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,6 +16,7 @@ import java.time.LocalDate;
 @WebServlet(name = "SignUpServlet", urlPatterns = "/views/signUp")
 public class SignUpServlet extends HttpServlet {
     private UserService userService = UserService.getInstance();
+    private AuthService authService = AuthService.getInstance();
 
     private boolean usernameEmpty = false;
     private boolean passwordEmpty = false;
@@ -60,13 +61,11 @@ public class SignUpServlet extends HttpServlet {
         }
         LocalDate birthday = LocalDate.parse(req.getParameter("birthday"));
 
-
         User user = new User(username, password, fio, birthday);
-        if(userService.addToStorage(user)){
+        if (authService.signUp(user)) {
             req.setAttribute("userCreated", true);
             req.getRequestDispatcher("/views/signUp.jsp").forward(req, resp);
-        }
-        else {
+        } else {
             req.setAttribute("userExists", true);
             req.getRequestDispatcher("/views/signUp.jsp").forward(req, resp);
         }

@@ -3,8 +3,6 @@ package by.it.academy.Mk_JD2_88_22.homework.hw1.controllers.servlets.messenger;
 import by.it.academy.Mk_JD2_88_22.homework.hw1.dto.User;
 import by.it.academy.Mk_JD2_88_22.homework.hw1.service.MessageService;
 import by.it.academy.Mk_JD2_88_22.homework.hw1.service.UserService;
-import by.it.academy.Mk_JD2_88_22.homework.hw1.service.api.IMessageService;
-import by.it.academy.Mk_JD2_88_22.homework.hw1.service.api.IUserService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -29,7 +27,9 @@ public class MessageServlet extends HttpServlet {
         String message = req.getParameter("message");
         String recipient = req.getParameter("recipient");
         User sender = (User) req.getSession().getAttribute("user");
+
         User recipientUser = service.getWithoutPass(recipient);
+
         if (recipientUser != null) {
             messageService.sendMessage(message, recipient, sender.getUsername());
             req.setAttribute("messageDeploy", true);

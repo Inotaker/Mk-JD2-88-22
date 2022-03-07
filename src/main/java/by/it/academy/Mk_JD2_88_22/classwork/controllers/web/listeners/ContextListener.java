@@ -2,7 +2,7 @@ package by.it.academy.Mk_JD2_88_22.classwork.controllers.web.listeners;
 
 import by.it.academy.Mk_JD2_88_22.classwork.dto.polls.Poll;
 import by.it.academy.Mk_JD2_88_22.classwork.dto.polls.SavedPoll;
-import by.it.academy.Mk_JD2_88_22.classwork.service.pool.PollService;
+import by.it.academy.Mk_JD2_88_22.classwork.service.service.pool.PollService;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;

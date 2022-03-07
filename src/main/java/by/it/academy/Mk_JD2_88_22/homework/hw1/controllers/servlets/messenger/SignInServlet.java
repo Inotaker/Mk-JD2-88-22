@@ -1,8 +1,8 @@
 package by.it.academy.Mk_JD2_88_22.homework.hw1.controllers.servlets.messenger;
 
 import by.it.academy.Mk_JD2_88_22.homework.hw1.dto.User;
-import by.it.academy.Mk_JD2_88_22.homework.hw1.service.UserService;
-import by.it.academy.Mk_JD2_88_22.homework.hw1.service.api.IUserService;
+import by.it.academy.Mk_JD2_88_22.homework.hw1.service.AuthService;
+import by.it.academy.Mk_JD2_88_22.homework.hw1.service.StorageService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,7 +13,9 @@ import java.io.IOException;
 
 @WebServlet(name = "SignInServlet", urlPatterns = "/views/signIn")
 public class SignInServlet extends HttpServlet {
-    private final UserService service = UserService.getInstance();
+
+    private final AuthService authService = AuthService.getInstance();
+    private final StorageService storageService = StorageService.getInstance();
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -21,19 +23,12 @@ public class SignInServlet extends HttpServlet {
         resp.setCharacterEncoding("UTF-8");
         resp.setContentType("text/html; charset=UTF-8");
 
-
         String username = req.getParameter("username");
         String password = req.getParameter("password");
 
-        User user = null;
-        for (User user1 : service.getUserList()) {
-            if (user1.getUsername().equals(username)) {
-                user = user1;
-                break;
-            }
-        }
+        User user = storageService.get(username);
         if (user != null) {
-            if (user.getPassword().equals(password)) {
+            if (authService.signIn(user, password)) {
                 req.getSession().setAttribute("user", user);
                 req.setAttribute("userLogin", true);
                 req.getRequestDispatcher("/views/signIn.jsp").forward(req, resp);

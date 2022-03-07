@@ -1,7 +1,7 @@
 package by.it.academy.Mk_JD2_88_22.classwork.controllers.web.servlets.jackson;
 
 import by.it.academy.Mk_JD2_88_22.classwork.dto.jackson.Student;
-import by.it.academy.Mk_JD2_88_22.classwork.service.jackson.StudentService;
+import by.it.academy.Mk_JD2_88_22.classwork.service.service.jackson.StudentService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
