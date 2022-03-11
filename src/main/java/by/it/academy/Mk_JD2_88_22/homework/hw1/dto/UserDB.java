@@ -2,7 +2,9 @@ package by.it.academy.Mk_JD2_88_22.homework.hw1.dto;
 
 import java.sql.*;
 import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class UserDB {
     private static String url = "jdbc:postgresql://localhost:5433/users";
@@ -25,7 +27,8 @@ public class UserDB {
                     String username = resultSet.getString(2);
                     String password = resultSet.getString(3);
                     String fio = resultSet.getString(4);
-                    User user = new User(username, password, fio, LocalDate.MAX);
+                    LocalDate birthday = LocalDate.parse(resultSet.getString(5));
+                    User user = new User(username, password, fio, birthday);
                     users.add(user);
                 }
             }

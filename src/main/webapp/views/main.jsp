@@ -59,5 +59,9 @@
         </div>
     </div>
 </div>
+<c:if test="${user!=null}">
+    <b><%=user.toString()%>
+    </b>
+</c:if>
 </body>
 </html>

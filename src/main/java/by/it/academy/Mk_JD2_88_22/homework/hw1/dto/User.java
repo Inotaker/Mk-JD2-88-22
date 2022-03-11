@@ -3,6 +3,7 @@ package by.it.academy.Mk_JD2_88_22.homework.hw1.dto;
 import java.io.Serializable;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class User implements DAO, Serializable {
     private static final long serialVersionUID = 1l;
@@ -36,7 +37,7 @@ public class User implements DAO, Serializable {
 
     @Override
     public String toString() {
-        return username + " pass: " + password + " fio: " + fio;
+        return username + " pass: " + password + " fio: " + fio + "birthday: " + birthday;
     }
 
     @Override
