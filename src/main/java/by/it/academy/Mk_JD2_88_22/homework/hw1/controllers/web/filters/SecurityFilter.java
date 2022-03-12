@@ -1,4 +1,4 @@
-package by.it.academy.Mk_JD2_88_22.homework.hw1.controllers.filters;
+package by.it.academy.Mk_JD2_88_22.homework.hw1.controllers.web.filters;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;

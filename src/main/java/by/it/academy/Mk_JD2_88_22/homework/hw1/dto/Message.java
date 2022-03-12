@@ -4,19 +4,19 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class Message {
-    private String recipientLogin;
-    private String senderLogin;
+    private String to;
+    private String from;
     private String message;
     private LocalDateTime sendingTime;
 
     private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy | HH:mm:ss");
 
-    public String getRecipientLogin() {
-        return recipientLogin;
+    public String getTo() {
+        return to;
     }
 
-    public String getSenderLogin() {
-        return senderLogin;
+    public String getFrom() {
+        return from;
     }
 
     public String getMessage() {
@@ -27,12 +27,12 @@ public class Message {
         return sendingTime;
     }
 
-    public void setRecipientLogin(String recipientLogin) {
-        this.recipientLogin = recipientLogin;
+    public void setTo(String to) {
+        this.to = to;
     }
 
-    public void setSenderLogin(String senderLogin) {
-        this.senderLogin = senderLogin;
+    public void setFrom(String from) {
+        this.from = from;
     }
 
     public void setMessage(String message) {
@@ -43,9 +43,9 @@ public class Message {
         this.sendingTime = sendingTime;
     }
 
-    public Message(String recipientLogin, String senderLogin, String message) {
-        this.recipientLogin = recipientLogin;
-        this.senderLogin = senderLogin;
+    public Message(String to, String from, String message) {
+        this.to = to;
+        this.from = from;
         this.message = message;
         this.sendingTime = LocalDateTime.now();
     }
@@ -53,6 +53,6 @@ public class Message {
     @Override
     public String toString() {
 
-        return "Message [" + message + "] from " + senderLogin + " to " + recipientLogin + " in time: " + sendingTime.format(formatter);
+        return "Message [" + message + "] from " + from + " to " + to + " in time: " + sendingTime.format(formatter);
     }
 }

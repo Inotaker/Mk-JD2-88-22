@@ -1,4 +1,4 @@
-package by.it.academy.Mk_JD2_88_22.homework.hw1.controllers.servlets.messenger;
+package by.it.academy.Mk_JD2_88_22.homework.hw1.controllers.web.servlets;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

@@ -4,6 +4,10 @@ public class Pageable {
     private int page;
     private int size;
 
+    public static Pageable of(int i, int i1) {
+        return null;
+    }
+
     public int getPage() {
         return page;
     }
