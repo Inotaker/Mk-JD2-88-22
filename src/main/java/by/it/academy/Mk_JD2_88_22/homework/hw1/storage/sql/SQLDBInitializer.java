@@ -1,4 +1,4 @@
-package by.it.academy.Mk_JD2_88_22.classwork.storage.api;
+package by.it.academy.Mk_JD2_88_22.homework.hw1.storage.sql;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
@@ -7,15 +7,15 @@ import java.beans.PropertyVetoException;
 import java.io.IOException;
 import java.sql.SQLException;
 
-public class DBInitializer {
-    private volatile static DBInitializer instance;
+public class SQLDBInitializer {
+    private volatile static SQLDBInitializer instance;
 
     private ComboPooledDataSource cpds;
 
-    private DBInitializer() throws IOException, SQLException, PropertyVetoException {
+    private SQLDBInitializer() throws IOException, SQLException, PropertyVetoException {
         cpds = new ComboPooledDataSource();
         cpds.setDriverClass("org.postgresql.Driver");
-        cpds.setJdbcUrl("jdbc:postgresql://localhost:5433/demo?ApplicationName=TestSweetApp");
+        cpds.setJdbcUrl("jdbc:postgresql://localhost:5433/users");
         cpds.setUser("postgres");
         cpds.setPassword("postgres");
         cpds.setMinPoolSize(5);
@@ -28,12 +28,12 @@ public class DBInitializer {
         return cpds;
     }
 
-    public static DBInitializer getInstance() {
+    public static SQLDBInitializer getInstance() {
         if(instance == null){
-            synchronized (DBInitializer.class){
+            synchronized (SQLDBInitializer.class){
                 if(instance == null){
                     try{
-                        instance = new DBInitializer();
+                        instance = new SQLDBInitializer();
                     } catch (Exception e){
                         throw new RuntimeException("Ошибка подключения к базе", e);
                     }

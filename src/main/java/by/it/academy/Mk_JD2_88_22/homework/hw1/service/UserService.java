@@ -1,32 +1,29 @@
 package by.it.academy.Mk_JD2_88_22.homework.hw1.service;
 
+import by.it.academy.Mk_JD2_88_22.homework.hw1.dto.AuditUser;
 import by.it.academy.Mk_JD2_88_22.homework.hw1.dto.User;
-import by.it.academy.Mk_JD2_88_22.homework.hw1.dto.UserDB;
+import by.it.academy.Mk_JD2_88_22.homework.hw1.storage.hibernate.HibernateDBUserStorage;
 import by.it.academy.Mk_JD2_88_22.homework.hw1.service.api.IUserService;
+import by.it.academy.Mk_JD2_88_22.homework.hw1.storage.sql.SQLDBAuditUserStorage;
 
-import java.util.ArrayList;
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class UserService implements IUserService {
     private static final UserService instance = new UserService();
-    private List<User> userList = new ArrayList<>();
 
-    @Override
-    public int getUserCount() {
-        return this.userList.size();
-    }
 
     @Override
     public List<User> getUserList() {
-        this.userList = UserDB.select();
-        return userList;
+        return HibernateDBUserStorage.select();
     }
 
     @Override
     public boolean addToStorage(User user) {
         String consumerUsername = user.getUsername();
         if (getWithoutPass(consumerUsername) == null) {
-            UserDB.insert(user);
+            HibernateDBUserStorage.insert(user);
+            SQLDBAuditUserStorage.getInstance().create(new AuditUser(LocalDateTime.now(),"Succsesful registration!", user, user));
             return true;
         } else {
             return false;
@@ -34,20 +31,9 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public User getFromStorage(String username, String password) {
-        User returningUser = null;
-        for (User user1 : userList) {
-            if (user1.getUsername().equals(username) && user1.getPassword().equals(password)) {
-                returningUser = user1;
-            }
-        }
-        return returningUser;
-    }
-
-    @Override
     public User getWithoutPass(String username) {
         User returningUser = null;
-        for (User user1 : userList) {
+        for (User user1 : getUserList()) {
             if (user1.getUsername().equals(username)) {
                 returningUser = user1;
             }

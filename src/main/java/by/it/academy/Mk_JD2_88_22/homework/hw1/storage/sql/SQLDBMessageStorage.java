@@ -1,19 +1,21 @@
-package by.it.academy.Mk_JD2_88_22.homework.hw1.dto;
+package by.it.academy.Mk_JD2_88_22.homework.hw1.storage.sql;
 
-import org.postgresql.util.PSQLException;
+import by.it.academy.Mk_JD2_88_22.homework.hw1.dto.Message;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
-public class MessageDB {
+public class SQLDBMessageStorage {
     private static String url = "jdbc:postgresql://localhost:5433/users";
     private static String username = "postgres";
     private static String password = "postgres";
     private static String driver = "org.postgresql.Driver";
 
-
-    public static ArrayList<Message> select() {
+       public static ArrayList<Message> select() {
 
         ArrayList<Message> messages = new ArrayList<>();
         try {
@@ -64,31 +66,6 @@ public class MessageDB {
 //        }
 //        return user;
 //    }
-
-
-    public static int insert(Message message) {
-
-        try {
-            Class.forName(driver).getDeclaredConstructor().newInstance();
-            try (Connection conn = DriverManager.getConnection(url, username, password)) {
-
-                String sql = "INSERT INTO users.messenger.message (text, \"from\", \"to\", send_dt) Values (?, ?, ?, ?)";
-                try (PreparedStatement preparedStatement = conn.prepareStatement(sql)) {
-                    preparedStatement.setString(1, message.getMessage());
-                    preparedStatement.setString(2, message.getFrom());
-                    preparedStatement.setString(3, message.getTo());
-                    preparedStatement.setObject(4, message.getSendingTime());
-
-                    return preparedStatement.executeUpdate();
-                }
-            } catch (PSQLException ex) {
-                System.out.println(ex.getMessage());
-            }
-        } catch (Exception ex) {
-            System.out.println("/*\\Message not added/*\\");
-        }
-        return 0;
-    }
 
 
 //    public static int update(User user) {

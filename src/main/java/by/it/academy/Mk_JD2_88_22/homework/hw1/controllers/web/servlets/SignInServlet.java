@@ -2,7 +2,7 @@ package by.it.academy.Mk_JD2_88_22.homework.hw1.controllers.web.servlets;
 
 import by.it.academy.Mk_JD2_88_22.homework.hw1.dto.User;
 import by.it.academy.Mk_JD2_88_22.homework.hw1.service.AuthService;
-import by.it.academy.Mk_JD2_88_22.homework.hw1.service.StorageService;
+import by.it.academy.Mk_JD2_88_22.homework.hw1.service.UserService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,7 +15,7 @@ import java.io.IOException;
 public class SignInServlet extends HttpServlet {
 
     private final AuthService authService = AuthService.getInstance();
-    private final StorageService storageService = StorageService.getInstance();
+    private final UserService userService = UserService.getInstance();
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -26,7 +26,7 @@ public class SignInServlet extends HttpServlet {
         String username = req.getParameter("username");
         String password = req.getParameter("password");
 
-        User user = storageService.get(username);
+        User user = userService.getWithoutPass(username);
         if (user != null) {
             if (authService.signIn(user, password)) {
                 req.getSession().setAttribute("user", user);

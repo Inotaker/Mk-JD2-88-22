@@ -43,12 +43,16 @@
 
     <div class="row">
         <div class="col-sm-1">
-            <form action="${pageContext.request.contextPath}/views/message" method="get">
-                <input class="btn-secondary" type="submit" value="Print message">
-            </form>
-            <form action="${pageContext.request.contextPath}/views/chats" method="get">
-                <input class="btn-secondary" type="submit" value="Chats">
-            </form>
+            <c:if test="${user!=null}">
+                <form action="${pageContext.request.contextPath}/views/message" method="get">
+                    <input class="btn-secondary" type="submit" value="Print message">
+                </form>
+            </c:if>
+            <c:if test="${user!=null}">
+                <form action="${pageContext.request.contextPath}/views/chats" method="get">
+                    <input class="btn-secondary" type="submit" value="Chats">
+                </form>
+            </c:if>
         </div>
         <div class="col-sm-10">
         </div>

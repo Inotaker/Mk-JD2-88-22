@@ -5,7 +5,7 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-public class User implements DAO, Serializable {
+public class User implements Serializable {
     private static final long serialVersionUID = 1l;
     private String username;
     private String password;
@@ -37,27 +37,7 @@ public class User implements DAO, Serializable {
 
     @Override
     public String toString() {
-        return username + " fio: " + fio + " birthday: " + birthday;
-    }
-
-    @Override
-    public Object save(Object o) throws SQLException {
-        return null;
-    }
-
-    @Override
-    public Object get(Serializable id) throws SQLException {
-        return null;
-    }
-
-    @Override
-    public void update(Object o) throws SQLException {
-
-    }
-
-    @Override
-    public int delete(Serializable id) throws SQLException {
-        return 0;
+        return username + " | fio: " + fio + " | birthday: " + birthday;
     }
 
     public static class Builder {
@@ -65,10 +45,8 @@ public class User implements DAO, Serializable {
         private String password;
         private String fio;
         private LocalDate birthday;
-        private LocalDateTime registration;
 
         private Builder() {
-
         }
 
         public Builder setLogin(String login) {
@@ -88,11 +66,6 @@ public class User implements DAO, Serializable {
 
         public Builder setBirthday(LocalDate birthday) {
             this.birthday = birthday;
-            return this;
-        }
-
-        public Builder setRegistration(LocalDateTime registration) {
-            this.registration = registration;
             return this;
         }
 

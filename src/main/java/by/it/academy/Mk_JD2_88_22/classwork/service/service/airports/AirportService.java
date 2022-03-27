@@ -2,7 +2,7 @@ package by.it.academy.Mk_JD2_88_22.classwork.service.service.airports;
 
 import by.it.academy.Mk_JD2_88_22.classwork.dto.airports.Airport;
 import by.it.academy.Mk_JD2_88_22.classwork.service.api.airports.IAirportService;
-import by.it.academy.Mk_JD2_88_22.classwork.storage.DBAirportStorage;
+import by.it.academy.Mk_JD2_88_22.classwork.storage.sql.DBAirportStorage;
 import by.it.academy.Mk_JD2_88_22.classwork.storage.api.IAirportStorage;
 
 import java.util.List;

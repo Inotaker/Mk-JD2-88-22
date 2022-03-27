@@ -1,21 +1,36 @@
-package by.it.academy.Mk_JD2_88_22.classwork.dto.airports;
+package by.it.academy.Mk_JD2_88_22.classwork.storage.hibernate;
 
-import com.fasterxml.jackson.annotation.JsonAutoDetect;
-import com.fasterxml.jackson.annotation.JsonInclude;
-
+import javax.persistence.Column;
+import javax.persistence.Table;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.time.LocalDateTime;
-@JsonAutoDetect
-public class Flights {
+@Entity
+@Table( schema = "bookings", name = "flights")
+public class FlightsEntity {
+
+    @Id
+    @Column(name = "flight_id")
     private int flightId;
+        @Column(name = "flight_no")
     private String flightNo;
+        @Column(name = "scheduled_departure")
     private LocalDateTime scheduledDeparture;
+        @Column(name = "scheduled_arrival")
     private LocalDateTime scheduledArrival;
+        @Column(name = "departure_airport")
     private String departureAirport;
+        @Column(name = "arrival_airport")
     private String arrivalAirport;
+        @Column(name = "status")
     private String status;
+        @Column(name = "aircraft_code")
     private String aircraftCode;
+        @Column(name = "actual_departure")
     private LocalDateTime actualDeparture;
+        @Column(name = "actual_arrival")
     private LocalDateTime actualArrival;
+
 
     public int getFlightId() {
         return flightId;

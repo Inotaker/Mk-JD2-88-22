@@ -1,4 +1,4 @@
-package by.it.academy.Mk_JD2_88_22.homework.hw1.dto.audit;
+package by.it.academy.Mk_JD2_88_22.homework.hw1.dto;
 
 import by.it.academy.Mk_JD2_88_22.homework.hw1.dto.User;
 

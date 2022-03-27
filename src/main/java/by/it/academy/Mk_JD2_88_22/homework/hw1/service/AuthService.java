@@ -1,10 +1,10 @@
 package by.it.academy.Mk_JD2_88_22.homework.hw1.service;
 
 import by.it.academy.Mk_JD2_88_22.homework.hw1.dto.User;
-import by.it.academy.Mk_JD2_88_22.homework.hw1.dto.UserDB;
 import by.it.academy.Mk_JD2_88_22.homework.hw1.service.api.IAuthService;
 
 public class AuthService implements IAuthService {
+    UserService userService = UserService.getInstance();
     private static final AuthService instance = new AuthService();
 
     public static AuthService getInstance() {
@@ -14,11 +14,7 @@ public class AuthService implements IAuthService {
 
     @Override
     public boolean signUp(User user) {
-        if (UserDB.insert(user) != 0) {
-            return true;
-        } else {
-            return false;
-        }
+        return userService.addToStorage(user);
     }
 
     @Override

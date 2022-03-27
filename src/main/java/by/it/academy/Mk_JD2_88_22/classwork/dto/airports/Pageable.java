@@ -4,8 +4,16 @@ public class Pageable {
     private int page;
     private int size;
 
-    public static Pageable of(int i, int i1) {
-        return null;
+    public Pageable(int page, int size) {
+        this.page = page;
+        this.size = size;
+    }
+
+    public static Pageable of(int page, int size) {
+        Pageable pageable = new Pageable(page, size);
+        pageable.setPage(page);
+        pageable.setSize(size);
+        return pageable;
     }
 
     public int getPage() {

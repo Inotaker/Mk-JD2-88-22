@@ -1,12 +1,10 @@
 package by.it.academy.Mk_JD2_88_22.homework.hw1.service;
 
 import by.it.academy.Mk_JD2_88_22.homework.hw1.dto.Message;
-import by.it.academy.Mk_JD2_88_22.homework.hw1.dto.MessageDB;
+import by.it.academy.Mk_JD2_88_22.homework.hw1.storage.hibernate.HibernateDBMessageStorage;
 import by.it.academy.Mk_JD2_88_22.homework.hw1.service.api.IMessageService;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 public class MessageService implements IMessageService {
@@ -14,14 +12,14 @@ public class MessageService implements IMessageService {
 
     @Override
     public List<Message> getAllMessages() {
-        List<Message> messages = MessageDB.select();
+        List<Message> messages = HibernateDBMessageStorage.select();
         return messages;
     }
 
 
     @Override
     public void sendMessage(String message, String recipient, String sender) {
-        MessageDB.insert(new Message(recipient, sender, message));
+        HibernateDBMessageStorage.insert(new Message(recipient, sender, message));
     }
 
     @Override

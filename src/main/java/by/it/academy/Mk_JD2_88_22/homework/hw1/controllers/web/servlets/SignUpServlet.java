@@ -15,7 +15,6 @@ import java.time.LocalDate;
 
 @WebServlet(name = "SignUpServlet", urlPatterns = "/views/signUp")
 public class SignUpServlet extends HttpServlet {
-    private UserService userService = UserService.getInstance();
     private AuthService authService = AuthService.getInstance();
 
     private boolean usernameEmpty = false;
@@ -30,7 +29,6 @@ public class SignUpServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        PrintWriter writer = resp.getWriter();
         req.setCharacterEncoding("UTF-8");
         resp.setCharacterEncoding("UTF-8");
         resp.setContentType("text/html; charset=UTF-8");

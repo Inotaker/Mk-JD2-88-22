@@ -1,9 +1,9 @@
-package by.it.academy.Mk_JD2_88_22.classwork.storage;
+package by.it.academy.Mk_JD2_88_22.classwork.storage.sql;
 
 import by.it.academy.Mk_JD2_88_22.classwork.dto.airports.Flights;
 import by.it.academy.Mk_JD2_88_22.classwork.dto.airports.FlightsFilter;
 import by.it.academy.Mk_JD2_88_22.classwork.dto.airports.Pageable;
-import by.it.academy.Mk_JD2_88_22.classwork.storage.api.DBInitializer;
+import by.it.academy.Mk_JD2_88_22.homework.hw1.storage.sql.SQLDBInitializer;
 import by.it.academy.Mk_JD2_88_22.classwork.storage.api.IFlightsStorage;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -19,7 +19,7 @@ public class DBFlightsStorage implements IFlightsStorage {
     private final DataSource dataSource;
 
     public DBFlightsStorage() {
-        dataSource = DBInitializer.getInstance().getDataSource();
+        dataSource = SQLDBInitializer.getInstance().getDataSource();
     }
 
     @Override

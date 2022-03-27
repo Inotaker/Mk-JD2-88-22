@@ -6,13 +6,9 @@ import java.util.List;
 
 public interface IUserService {
 
-    int getUserCount();
-
     List<User> getUserList();
 
     boolean addToStorage(User user);
-
-    User getFromStorage(String username, String password);
 
     User getWithoutPass(String username);
 

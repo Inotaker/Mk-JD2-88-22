@@ -2,7 +2,7 @@ package by.it.academy.Mk_JD2_88_22.classwork.controllers.mains.aiprorts;
 
 import by.it.academy.Mk_JD2_88_22.classwork.dto.airports.Flights;
 import by.it.academy.Mk_JD2_88_22.classwork.dto.airports.FlightsFilter;
-import by.it.academy.Mk_JD2_88_22.classwork.storage.DBFlightsStorage;
+import by.it.academy.Mk_JD2_88_22.classwork.storage.sql.DBFlightsStorage;
 import by.it.academy.Mk_JD2_88_22.classwork.storage.api.IFlightsStorage;
 
 import java.util.List;
