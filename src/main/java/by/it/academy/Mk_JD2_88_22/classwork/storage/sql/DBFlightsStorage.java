@@ -2,8 +2,8 @@ package by.it.academy.Mk_JD2_88_22.classwork.storage.sql;
 
 import by.it.academy.Mk_JD2_88_22.classwork.dto.airports.Flights;
 import by.it.academy.Mk_JD2_88_22.classwork.dto.airports.FlightsFilter;
-import by.it.academy.Mk_JD2_88_22.classwork.dto.airports.Pageable;
-import by.it.academy.Mk_JD2_88_22.homework.hw1.storage.sql.SQLDBInitializer;
+import by.it.academy.Mk_JD2_88_22.homework.hw1.model.Pageable;
+import by.it.academy.Mk_JD2_88_22.classwork.sql.SQLDBInitializer;
 import by.it.academy.Mk_JD2_88_22.classwork.storage.api.IFlightsStorage;
 import com.fasterxml.jackson.databind.ObjectMapper;
 

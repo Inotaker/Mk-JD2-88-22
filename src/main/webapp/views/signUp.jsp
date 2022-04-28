@@ -62,7 +62,8 @@
             <p style="color: green"><b>User created!</b></p>
         </c:if>
     </c:if>
-    <jsp:include page="returnToMain.html"></jsp:include>
 </form>
+<br><a href="main.jsp"><input type="button" value="Return to main page" style="background-color: forestgreen"></a>
+<jsp:include page="returnToMain.html"></jsp:include>
 </body>
 </html>

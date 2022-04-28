@@ -24,7 +24,7 @@ Message page
 </form>
 <c:if test="${messageDeploy!=null}">
     <c:choose>
-        <c:when test="${messageDeploy && messageDeploy}">
+        <c:when test="${messageDeploy}">
             <p style="color: green">Message deployed!</p>
         </c:when>
         <c:otherwise>
@@ -32,6 +32,7 @@ Message page
         </c:otherwise>
     </c:choose>
 </c:if>
+<br><a href="main.jsp"><input type="button" value="Return to main page" style="background-color: forestgreen"></a>
 <jsp:include page="returnToMain.html"></jsp:include>
 </body>
 </html>

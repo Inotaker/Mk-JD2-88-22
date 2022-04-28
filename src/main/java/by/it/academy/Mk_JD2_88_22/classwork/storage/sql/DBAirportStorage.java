@@ -4,7 +4,7 @@ import by.it.academy.Mk_JD2_88_22.classwork.dto.airports.Airport;
 import by.it.academy.Mk_JD2_88_22.classwork.dto.airports.AirportName;
 import by.it.academy.Mk_JD2_88_22.classwork.dto.airports.City;
 import by.it.academy.Mk_JD2_88_22.classwork.dto.airports.Coordinates;
-import by.it.academy.Mk_JD2_88_22.homework.hw1.storage.sql.SQLDBInitializer;
+import by.it.academy.Mk_JD2_88_22.classwork.sql.SQLDBInitializer;
 import by.it.academy.Mk_JD2_88_22.classwork.storage.api.IAirportStorage;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;

@@ -44,6 +44,7 @@ Login page
         <p style="color: orange"><b>Wrong password!</b></p>
     </c:if>
 </form>
+<br><a href="main.jsp"><input type="button" value="Return to main page" style="background-color: forestgreen"></a>
 <jsp:include page="returnToMain.html"></jsp:include>
 </body>
 </html>

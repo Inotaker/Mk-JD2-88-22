@@ -1,4 +1,4 @@
-<%@ page import="by.it.academy.Mk_JD2_88_22.homework.hw1.dto.User" %>
+<%@ page import="by.it.academy.Mk_JD2_88_22.homework.hw1.model.User" %>
 <%@ page import="java.time.format.DateTimeFormatter" %><%--
   Created by IntelliJ IDEA.
   User: Inotak
@@ -21,6 +21,8 @@
 </head>
 <body>
 <p style="background-color: royalblue"><b>Incoming messages:</b></p>
+<br><a href="main.jsp"><input type="button" value="Return to main page" style="background-color: forestgreen"></a>
+<jsp:include page="returnToMain.html"></jsp:include>
 <table>
     <c:choose>
         <c:when test="${user!=null}">
@@ -63,6 +65,5 @@
         </c:otherwise>
     </c:choose>
 </table>
-<jsp:include page="returnToMain.html"></jsp:include>
 </body>
 </html>
